@@ -3,21 +3,17 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
-    <persistence-unit name="CensusDBManager">
-        <class>Model.AgeEntity</class>
-        <class>Model.AgegroupEntity</class>
-        <class>Model.CensusyearEntity</class>
-        <class>Model.GeographicareaEntity</class>
-        <class>Model.HouseholdEntity</class>
-        <class>Model.HouseholdearnersEntity</class>
-        <class>Model.HouseholdsbyagerangeEntity</class>
-        <class>Model.HouseholdsizeEntity</class>
-        <class>Model.HouseholdtypeEntity</class>
-        <class>Model.TotalincomeEntity</class>
-        <class>Model.UserEntity</class>
-
+    <persistence-unit name="HRManager">
+        <class>Model.CountriesEntity</class>
+        <class>Model.DepartmentsEntity</class>
+        <class>Model.DependentsEntity</class>
+        <class>Model.EmployeesEntity</class>
+        <class>Model.JobHistoryEntity</class>
+        <class>Model.JobsEntity</class>
+        <class>Model.LocationsEntity</class>
+        <class>Model.RegionsEntity</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/HR"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
             <property name="hibernate.connection.password" value="password"/>
