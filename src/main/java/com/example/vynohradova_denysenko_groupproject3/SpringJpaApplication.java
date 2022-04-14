@@ -9,12 +9,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = {HRManagerService.class})
+@ComponentScan(basePackageClasses = { HRManagerService.class })
 @EntityScan("Model")
 @EnableJpaRepositories("Repository")
 public class SpringJpaApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringJpaApplication.class, args);
         HRManagerService hrManagerService = (HRManagerService) context.getBean("hrManagerService");
+        hrManagerService.test();
     }
 }
