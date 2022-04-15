@@ -25,7 +25,7 @@ public class HRManagerService {
 
         // 2. Find all Employees whose first name ends with Letter a.
         System.out.println("Employees whose first name ends with Letter a:");
-        List<EmployeesEntity> employeesLastName = empRepository.findByLastNameEndsWith("a");
+        List<EmployeesEntity> employeesLastName = empRepository.findByFirstNameEndsWith("a");
         employeesLastName.forEach(System.out::println);
         System.out.println("****************************************************************************************");
 

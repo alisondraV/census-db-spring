@@ -18,7 +18,7 @@ public class CountriesEntity {
     @Column(name = "region_id", nullable = false)
     private int regionId;
     @ManyToOne
-    @JoinColumn(name = "region_id", referencedColumnName = "region_id", nullable = false)
+    @JoinColumn(name = "region_id", referencedColumnName = "region_id", nullable = false, insertable = false, updatable = false)
     private RegionsEntity regionsByRegionId;
     @OneToMany(mappedBy = "countriesByCountryId")
     private Collection<LocationsEntity> locationsByCountryId;

@@ -23,7 +23,7 @@ public class DependentsEntity {
     @Column(name = "employee_id", nullable = false)
     private int employeeId;
     @ManyToOne
-    @JoinColumn(name = "employee_id", referencedColumnName = "employee_id", nullable = false)
+    @JoinColumn(name = "employee_id", referencedColumnName = "employee_id", nullable = false, insertable = false, updatable = false)
     private EmployeesEntity employeesByEmployeeId;
 
     public int getDependentId() {

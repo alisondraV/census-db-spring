@@ -18,12 +18,21 @@ public class DepartmentsEntity {
     @Column(name = "location_id", nullable = true)
     private Integer locationId;
     @ManyToOne
-    @JoinColumn(name = "location_id", referencedColumnName = "location_id")
+    @JoinColumn(name = "location_id", referencedColumnName = "location_id", insertable = false, updatable = false)
     private LocationsEntity locationsByLocationId;
     @OneToMany(mappedBy = "departmentsByDepartmentId")
     private Collection<EmployeesEntity> employeesByDepartmentId;
     @OneToMany(mappedBy = "departmentsByDepartmentId")
     private Collection<JobHistoryEntity> jobHistoriesByDepartmentId;
+
+    @Override
+    public String toString() {
+        return "DepartmentsEntity {" +
+                "departmentId=" + departmentId +
+                ", departmentName='" + departmentName + '\'' +
+                ", locationId=" + locationId +
+                '}';
+    }
 
     public int getDepartmentId() {
         return departmentId;

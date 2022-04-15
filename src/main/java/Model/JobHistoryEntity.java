@@ -26,10 +26,10 @@ public class JobHistoryEntity {
     @Column(name = "Department_Id", nullable = true)
     private Integer departmentId;
     @ManyToOne
-    @JoinColumn(name = "Job_Id", referencedColumnName = "job_id")
+    @JoinColumn(name = "Job_Id", referencedColumnName = "job_id", insertable = false, updatable = false)
     private JobsEntity jobsByJobId;
     @ManyToOne
-    @JoinColumn(name = "Department_Id", referencedColumnName = "department_id")
+    @JoinColumn(name = "Department_Id", referencedColumnName = "department_id", insertable = false, updatable = false)
     private DepartmentsEntity departmentsByDepartmentId;
 
     public int getEmployeeId() {

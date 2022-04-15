@@ -46,16 +46,31 @@ public class EmployeesEntity {
     @OneToMany(mappedBy = "employeesByEmployeeId")
     private Collection<DependentsEntity> dependentsByEmployeeId;
     @ManyToOne
-    @JoinColumn(name = "job_id", referencedColumnName = "job_id", nullable = false)
+    @JoinColumn(name = "job_id", referencedColumnName = "job_id", nullable = false, insertable = false, updatable = false)
     private JobsEntity jobsByJobId;
     @ManyToOne
-    @JoinColumn(name = "manager_id", referencedColumnName = "employee_id")
+    @JoinColumn(name = "manager_id", referencedColumnName = "employee_id", insertable = false, updatable = false)
     private EmployeesEntity employeesByManagerId;
     @OneToMany(mappedBy = "employeesByManagerId")
     private Collection<EmployeesEntity> employeesByEmployeeId;
     @ManyToOne
-    @JoinColumn(name = "department_id", referencedColumnName = "department_id")
+    @JoinColumn(name = "department_id", referencedColumnName = "department_id", insertable = false, updatable = false)
     private DepartmentsEntity departmentsByDepartmentId;
+
+    @Override
+    public String toString() {
+        return "EmployeesEntity {" +
+                "employeeId=" + employeeId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", hireDate=" + hireDate +
+                ", salary=" + salary +
+                ", managerId=" + managerId +
+                ", departmentId=" + departmentId +
+                '}';
+    }
 
     public int getEmployeeId() {
         return employeeId;

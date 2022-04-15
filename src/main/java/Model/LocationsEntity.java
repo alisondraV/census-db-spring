@@ -29,7 +29,7 @@ public class LocationsEntity {
     @OneToMany(mappedBy = "locationsByLocationId")
     private Collection<DepartmentsEntity> departmentsByLocationId;
     @ManyToOne
-    @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false)
+    @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false, insertable = false, updatable = false)
     private CountriesEntity countriesByCountryId;
 
     public int getLocationId() {
