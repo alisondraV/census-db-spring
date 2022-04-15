@@ -1,6 +1,7 @@
 package Repository;
 
 import Model.*;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.math.BigDecimal;
@@ -11,4 +12,8 @@ public interface EmployeeRepository extends CrudRepository<EmployeesEntity, Inte
     List<EmployeesEntity> findByFirstNameEndsWith(Character letter);
     List<EmployeesEntity> findByDepartmentId(Integer id);
     List<EmployeesEntity> findByManagerId(Integer id);
+    EmployeesEntity findByEmployeeId(Integer id);
+
+    @Query("SELECT DISTINCT emp.managerId FROM EmployeesEntity emp")
+    List<Integer> getDistinctManagerId();
 }

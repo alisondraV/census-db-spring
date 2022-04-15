@@ -66,6 +66,14 @@ public class HRManagerService {
 
         // 10. Select the Manager name, department id of manager, the count of employees working under that manager as Total_Employees.
         System.out.println("Manager name, department id of manager, the count of employees working under that manager as Total_Employees:");
+        List<Integer> managerIds = empRepository.getDistinctManagerId();
+        managerIds.forEach(id -> {
+            if (id == null) return;
+            EmployeesEntity manager = empRepository.findByEmployeeId(id);
+            List<EmployeesEntity> employeesForManager = empRepository.findByManagerId(id);
+            System.out.println("Manager: " + manager.getFirstName() + " " + manager.getLastName() +
+                    ". Department ID: " + manager.getDepartmentId() + ". Total_Employees: " + employeesForManager.size());
+        });
         System.out.println("************************************************************************************************************************************************************************************************************************");
     }
 }
