@@ -73,7 +73,8 @@ public class HRManagerService {
 
         // 9. Display the average of sum of the salaries and group the result with the department id. Order the result with department id.
         System.out.println("Average of sum of the salaries and group the result with the department id, ordered by department id");
-
+        List<Double> salaries = empRepository.getSalaryAverageByDepartmentId();
+        salaries.forEach(System.out::println);
         System.out.println("************************************************************************************************************************************************************************************************************************");
 
         // 10. Select the Manager name, department id of manager, the count of employees working under that manager as Total_Employees.

@@ -16,6 +16,9 @@ public interface EmployeeRepository extends CrudRepository<EmployeesEntity, Inte
     List<EmployeesEntity> findByManagerId(Integer id);
     EmployeesEntity findByEmployeeId(Integer id);
 
+    @Query("SELECT AVG(salary) FROM EmployeesEntity GROUP BY departmentId ORDER BY departmentId")
+    List<Double> getSalaryAverageByDepartmentId();
+
     @Query("SELECT new DTO.EmployeeDto(e.lastName, j.jobTitle, d.departmentId, d.departmentName) FROM EmployeesEntity AS e " +
             "JOIN JobsEntity AS j ON e.jobId = j.jobId " +
             "JOIN DepartmentsEntity AS d ON e.departmentId = d.departmentId " +
