@@ -1,5 +1,8 @@
 package Service;
 
+import DTO.CountryCityDto;
+import DTO.DepartmentWithLocationDto;
+import DTO.EmployeeDto;
 import Model.DepartmentsEntity;
 import Model.EmployeesEntity;
 import Repository.*;
@@ -15,6 +18,8 @@ public class HRManagerService {
     private EmployeeRepository empRepository;
     @Autowired
     private DepartmentRepository depRepository;
+    @Autowired
+    private LocationRepository locRepository;
 
     public void test() {
         // 1. Find all Employees whose salary is in the range 9000, 17000.
@@ -50,18 +55,25 @@ public class HRManagerService {
 
         // 6. Count the number of cities each country has. Return country ID and number of cities.
         System.out.println("Number of cities each country has. Return country ID and number of cities:");
+        List<CountryCityDto> citiesCountByCountry = locRepository.countCitiesByCountry();
+        citiesCountByCountry.forEach(System.out::println);
         System.out.println("************************************************************************************************************************************************************************************************************************");
 
         // 7. Display the department name, city, and state province for each department.
         System.out.println("Department name, city, and state province for each department:");
+        List<DepartmentWithLocationDto> departmentsWithLocation = depRepository.getDepartmentsWithLocations();
+        departmentsWithLocation.forEach(System.out::println);
         System.out.println("************************************************************************************************************************************************************************************************************************");
 
         // 8. Display the last name, job, department number and department name for all employees who work in 'Toronto' city.
         System.out.println("Last name, job, department number and department name for all employees who work in 'Toronto' city:");
+        List<EmployeeDto> employees = empRepository.findEmployeesEntitiesByCity("Toronto");
+        employees.forEach(System.out::println);
         System.out.println("************************************************************************************************************************************************************************************************************************");
 
         // 9. Display the average of sum of the salaries and group the result with the department id. Order the result with department id.
         System.out.println("Average of sum of the salaries and group the result with the department id, ordered by department id");
+
         System.out.println("************************************************************************************************************************************************************************************************************************");
 
         // 10. Select the Manager name, department id of manager, the count of employees working under that manager as Total_Employees.
