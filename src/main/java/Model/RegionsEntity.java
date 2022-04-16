@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ * Model class for the regions table
+ */
 @Entity
 @Table(name = "regions", schema = "HR")
 public class RegionsEntity {

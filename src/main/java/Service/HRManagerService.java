@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * Tests the functionality of various repositories.
+ * Produces the main output.
+ */
 @Service("hrManagerService")
 public class HRManagerService {
     @Autowired
@@ -21,6 +25,9 @@ public class HRManagerService {
     @Autowired
     private LocationRepository locRepository;
 
+    /**
+     * Prints out query results from different repositories
+     */
     public void test() {
         // 1. Find all Employees whose salary is in the range 9000, 17000.
         System.out.println("Employees whose salary is in the range 9000, 17000:");

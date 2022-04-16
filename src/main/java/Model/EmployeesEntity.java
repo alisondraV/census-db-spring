@@ -6,6 +6,9 @@ import java.sql.Date;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ * Model class for the employees table
+ */
 @Entity
 @Table(name = "employees", schema = "HR")
 public class EmployeesEntity {

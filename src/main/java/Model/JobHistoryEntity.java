@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
 
+/**
+ * Model class for the job_history table
+ */
 @Entity
 @Table(name = "job_history", schema = "HR")
 @IdClass(JobHistoryEntityPK.class)

@@ -1,5 +1,8 @@
 package DTO;
 
+/**
+ * A Data Transfer Object used to represent country cities count
+ */
 public class CountryCityDto {
     String countryId;
     Long cityCount;

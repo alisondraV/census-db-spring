@@ -3,6 +3,9 @@ package Model;
 import javax.persistence.*;
 import java.util.Objects;
 
+/**
+ * Model class for the dependents table
+ */
 @Entity
 @Table(name = "dependents", schema = "HR")
 public class DependentsEntity {

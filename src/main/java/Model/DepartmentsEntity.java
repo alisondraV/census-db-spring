@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ * Model class for the departments table
+ */
 @Entity
 @Table(name = "departments", schema = "HR")
 public class DepartmentsEntity {

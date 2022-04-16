@@ -4,6 +4,10 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ * Model class for the locations table
+ */
+
 @Entity
 @Table(name = "locations", schema = "HR")
 public class LocationsEntity {

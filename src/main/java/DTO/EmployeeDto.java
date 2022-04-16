@@ -1,5 +1,8 @@
 package DTO;
 
+/**
+ * A Data Transfer Object used to represent extended employee information
+ */
 public class EmployeeDto {
     String lastName;
     String job;

@@ -1,5 +1,8 @@
 package DTO;
 
+/**
+ * A Data Transfer Object used to represent extended department information
+ */
 public class DepartmentWithLocationDto {
     String name;
     String city;

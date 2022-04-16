@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * A collection of methods for querying employees
+ */
 public interface EmployeeRepository extends CrudRepository<EmployeesEntity, Integer> {
     List<EmployeesEntity> findBySalaryBetween(BigDecimal min, BigDecimal max);
     List<EmployeesEntity> findByFirstNameEndsWith(Character letter);

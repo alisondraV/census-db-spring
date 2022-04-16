@@ -7,6 +7,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
+/**
+ * A collection of methods for querying departments
+ */
 public interface DepartmentRepository extends CrudRepository<DepartmentsEntity, Integer> {
     DepartmentsEntity findByDepartmentName(String name);
     List<DepartmentsEntity> findByLocationId(Integer id);

@@ -5,6 +5,9 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ * Model class for the jobs table
+ */
 @Entity
 @Table(name = "jobs", schema = "HR")
 public class JobsEntity {

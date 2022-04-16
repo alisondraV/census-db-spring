@@ -8,6 +8,9 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
 
+/**
+ * Model class for the job_history table primary key
+ */
 public class JobHistoryEntityPK implements Serializable {
     @Column(name = "Employee_Id", nullable = false)
     @Id
